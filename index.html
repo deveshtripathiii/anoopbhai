@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anoop Shukla | Finance & Insurance</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #0f172a;
+            color: #e2e8f0;
+        }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            padding: 50px 20px;
+        }
+
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 3px solid white;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.2);
+        }
+
+        #typing {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+            min-height: 40px;
+        }
+
+        .contact-info a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* SECTIONS */
+        section {
+            margin: 20px;
+            padding: 25px;
+            background: #1e293b;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #38bdf8;
+        }
+
+        /* REVIEWS */
+        .reviews {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .review-card {
+            background: #0f172a;
+            padding: 20px;
+            width: 280px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            transition: transform 0.3s;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .review-card h4 {
+            color: #38bdf8;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 15px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .instagram {
+            background: #e1306c;
+        }
+
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: green;
+            padding: 12px 18px;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <img src="anoop.png" class="profile-img">
+
+        <h1>Anoop Shukla</h1>
+
+        <span id="typing"></span>
+
+        <div class="contact-info">
+            <p>📞 <a href="tel:8588883074">8588883074</a></p>
+            <p>📧 <a href="mailto:shuklaji8498@gmail.com">shuklaji8498@gmail.com</a></p>
+            <p>📍 Sultanpur, Uttar Pradesh</p>
+        </div>
+
+        <!-- Instagram Button -->
+        <a href="https://www.instagram.com/anoop_shukla_08/" target="_blank" class="btn instagram">
+            Follow on Instagram
+        </a>
+    </section>
+
+    <!-- ABOUT -->
+    <section>
+        <h2>About Me</h2>
+
+        <p>
+            मैं अपने ग्राहकों को आसान और भरोसेमंद तरीके से बाइक और स्कूटी फाइनेंस 
+            उपलब्ध कराने में मदद करता हूँ। मेरा लक्ष्य है कि हर व्यक्ति अपने सपनों 
+            की बाइक या स्कूटी को बिना किसी परेशानी के प्राप्त कर सके।
+        </p>
+
+        <p>
+            I help people get bike and scooty finance easily with minimal paperwork.
+            I also provide all types of insurance services with the best deals.
+        </p>
+    </section>
+
+    <!-- SERVICES -->
+    <section>
+        <h2>Services</h2>
+        <p>✔ Bike Finance | ✔ Scooty Finance | ✔ Insurance</p>
+    </section>
+
+    <!-- REVIEWS -->
+    <section>
+        <h2>Client Reviews</h2>
+
+        <div class="reviews">
+
+            <div class="review-card">
+                <p>⭐⭐⭐⭐⭐<br>बहुत अच्छी सर्विस और आसान प्रक्रिया।</p>
+                <h4>— Rahul</h4>
+            </div>
+
+            <div class="review-card">
+                <p>⭐⭐⭐⭐⭐<br>Quick approval and trusted service.</p>
+                <h4>— Aman</h4>
+            </div>
+
+            <div class="review-card">
+                <p>⭐⭐⭐⭐⭐<br>Insurance best rate par mila.</p>
+                <h4>— Sandeep</h4>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section>
+        <h2>Contact</h2>
+        <p>📞 8588883074</p>
+        <p>📧 shuklaji8498@gmail.com</p>
+        <p>📍 Sultanpur, Uttar Pradesh</p>
+    </section>
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/918588883074?text=Hello%20Sir,%20I%20want%20bike%20finance"
+       target="_blank" class="btn whatsapp">
+        WhatsApp
+    </a>
+
+    <!-- TYPING EFFECT -->
+    <script>
+        const texts = [
+            "Bike & Scooty Finance Expert with Fast Approval.",
+            "Trusted Insurance Services Provider.",
+            "Minimum Paperwork | Maximum Satisfaction."
+        ];
+
+        let count = 0;
+        let index = 0;
+        let currentText = "";
+        let letter = "";
+
+        function type() {
+            if (count === texts.length) count = 0;
+
+            currentText = texts[count];
+            letter = currentText.slice(0, ++index);
+
+            document.getElementById("typing").innerHTML = letter;
+
+            if (letter.length === currentText.length) {
+                setTimeout(() => {
+                    index = 0;
+                    count++;
+                }, 1500);
+            }
+
+            setTimeout(type, 40);
+        }
+
+        type();
+    </script>
+
+</body>
+</html>

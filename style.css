@@ -1,0 +1,180 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+/* HERO SECTION */
+.hero {
+    text-align: center;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    padding: 60px 20px;
+}
+
+/* PROFILE IMAGE */
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    object-fit: cover;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.25);
+    box-shadow: 0 0 25px rgba(255,255,255,0.6);
+}
+
+/* NAME */
+.hero h1 {
+    margin-top: 15px;
+    font-size: 28px;
+}
+
+/* TYPING TEXT */
+#typing {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    min-height: 40px;
+    color: #93c5fd;
+}
+
+/* CONTACT INFO */
+.contact-info {
+    margin-top: 15px;
+}
+
+.contact-info p {
+    margin: 6px 0;
+}
+
+.contact-info a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* SECTION CARDS */
+section {
+    margin: 20px;
+    padding: 25px;
+    background: #1e293b;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+/* HEADINGS */
+h2 {
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+/* SERVICES TEXT */
+section p {
+    margin-top: 10px;
+}
+
+/* REVIEWS */
+.reviews {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* REVIEW CARD */
+.review-card {
+    background: #020617;
+    padding: 20px;
+    width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+}
+
+.review-card p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.review-card h4 {
+    color: #38bdf8;
+}
+
+/* BUTTON BASE */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* INSTAGRAM BUTTON */
+.instagram {
+    background: linear-gradient(45deg, #e1306c, #fd1d1d);
+    color: white;
+}
+
+.instagram:hover {
+    transform: scale(1.1);
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #22c55e;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .reviews {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .hero h1 {
+        font-size: 22px;
+    }
+}
