@@ -296,3 +296,70 @@ body {
     z-index: 9998;
     transition: transform 1s linear, opacity 1s;
 }
+body {
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+/* BIKE CARDS */
+.bikes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 15px;
+  width: 250px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* CALCULATOR */
+.calculator {
+  text-align: center;
+  padding: 40px;
+}
+
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 200px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background: #22c55e;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
