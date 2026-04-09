@@ -110,3 +110,44 @@ document.addEventListener("click", (e) => {
         bike.remove();
     }, 1000);
 });
+// ==========================
+// CURSOR FOLLOW
+// ==========================
+const cursor = document.getElementById("cursor");
+
+document.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+});
+
+// ==========================
+// CLICK → MULTIPLE BIKE RUN
+// ==========================
+
+document.addEventListener("click", (e) => {
+
+    for (let i = 0; i < 6; i++) {
+
+        const bike = document.createElement("img");
+        bike.src = "bikecursor.jpg";
+        bike.classList.add("mini-bike");
+
+        bike.style.left = e.clientX + "px";
+        bike.style.top = e.clientY + "px";
+
+        document.body.appendChild(bike);
+
+        // Random direction (corners)
+        let x = Math.random() * window.innerWidth;
+        let y = Math.random() * window.innerHeight;
+
+        setTimeout(() => {
+            bike.style.transform = `translate(${x - e.clientX}px, ${y - e.clientY}px)`;
+            bike.style.opacity = "0";
+        }, 50);
+
+        setTimeout(() => {
+            bike.remove();
+        }, 1000);
+    }
+});
