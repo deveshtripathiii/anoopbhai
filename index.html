@@ -1,184 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anoop Shukla | Finance & Insurance</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anoop Shukla Finance</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #0f172a;
-            color: #e2e8f0;
-        }
+<style>
 
-        .hero {
-            text-align: center;
-            background: linear-gradient(135deg, #1e3a8a, #2563eb);
-            padding: 50px 20px;
-        }
+/* ===== BODY + BACKGROUND ===== */
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(-45deg,#0f172a,#1e293b,#020617,#1e3a8a);
+    background-size: 400% 400%;
+    animation: bg 10s infinite;
+    color: white;
+    cursor: none;
+}
 
-        .profile-img {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            border: 3px solid white;
-            transition: 0.4s;
-        }
+@keyframes bg {
+    0%{background-position:0%}
+    50%{background-position:100%}
+    100%{background-position:0%}
+}
 
-        .profile-img:hover {
-            transform: scale(1.2);
-        }
+/* ===== HERO ===== */
+.hero {
+    text-align: center;
+    padding: 40px;
+}
 
-        section {
-            margin: 20px;
-            padding: 25px;
-            background: #1e293b;
-            border-radius: 10px;
-            text-align: center;
-        }
+.profile-img {
+    width:120px;
+    border-radius:50%;
+}
 
-        h2 {
-            color: #38bdf8;
-        }
+/* ===== SECTION ===== */
+section {
+    margin:20px;
+    padding:20px;
+    background:#1e293b;
+    border-radius:10px;
+}
 
-        /* GALLERY */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
-        }
+/* ===== GALLERY ===== */
+.gallery {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:15px;
+}
 
-        .card {
-            background: #020617;
-            padding: 10px;
-            border-radius: 10px;
-        }
+.card {
+    background:#020617;
+    padding:10px;
+    border-radius:10px;
+}
 
-        .card img {
-            width: 100%;
-            border-radius: 10px;
-        }
+.card img {
+    width:100%;
+}
 
-        .whatsapp-btn {
-            background: green;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 20px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 10px;
-        }
+/* ===== BUTTON ===== */
+.btn {
+    background:green;
+    padding:8px;
+    border-radius:20px;
+    text-decoration:none;
+    color:white;
+    display:inline-block;
+    margin-top:10px;
+}
 
-        .btn {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 15px;
-            border-radius: 30px;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-        }
+/* ===== EMI ===== */
+input {
+    padding:8px;
+    margin:5px;
+}
 
-        .instagram {
-            background: #e1306c;
-        }
+/* ===== CURSOR ===== */
+.bike-cursor {
+    position:fixed;
+    width:40px;
+    pointer-events:none;
+    transform:translate(-50%,-50%);
+    z-index:9999;
+}
 
-        .whatsapp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: green;
-            padding: 12px 18px;
-            border-radius: 50px;
-        }
-    </style>
+/* MINI BIKES */
+.mini-bike {
+    position:fixed;
+    width:25px;
+    pointer-events:none;
+    transition:1s linear;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align:center;
+    padding:20px;
+    background:black;
+    margin-top:20px;
+}
+
+.big-title {
+    font-size:22px;
+    color:#38bdf8;
+}
+
+</style>
 </head>
 
 <body>
 
-    <!-- HERO -->
-    <section class="hero">
-        <img src="anoop.png" class="profile-img">
+<!-- HERO -->
+<div class="hero">
+    <img src="anoop.png" class="profile-img">
+    <h1>Anoop Shukla</h1>
+    <p>📞 8588883074</p>
+    <p>📧 shuklaji8498@gmail.com</p>
+    <p>📍 Sultanpur, Uttar Pradesh</p>
+</div>
 
-        <h1>Anoop Shukla</h1>
-        <span id="typing"></span>
+<!-- GALLERY -->
+<section>
+<h2>Bike Collection</h2>
 
-        <p>📞 8588883074</p>
-        <p>📧 shuklaji8498@gmail.com</p>
-        <p>📍 Sultanpur, Uttar Pradesh</p>
+<!-- FILTER BUTTONS -->
+<div style="margin-bottom:15px;">
+<button onclick="filterBike('all')">All</button>
+<button onclick="filterBike('hero')">Hero</button>
+<button onclick="filterBike('honda')">Honda</button>
+<button onclick="filterBike('tvs')">TVS</button>
+</div>
 
-        <a href="https://www.instagram.com/anoop_shukla_08/" target="_blank" class="btn instagram">
-            Follow on Instagram
-        </a>
-    </section>
+<div class="gallery">
 
-    <!-- ABOUT -->
-    <section>
-        <h2>About Me</h2>
-        <p>मैं ग्राहकों को आसानी से बाइक और स्कूटी फाइनेंस दिलाता हूँ।</p>
-        <p>I help people get bike and scooty finance easily.</p>
-    </section>
+<div class="card hero">
+<img src="BIKE1.jpg">
+<p>Hero Splendor</p>
+<a href="#" onclick="enquire('Hero Splendor')" class="btn">Enquire</a>
+</div>
 
-    <!-- SERVICES -->
-    <section>
-        <h2>Services</h2>
-        <p>✔ Bike Finance | ✔ Scooty Finance | ✔ Insurance</p>
-    </section>
+<div class="card honda">
+<img src="BIKE2.jpg">
+<p>Honda Shine</p>
+<a href="#" onclick="enquire('Honda Shine')" class="btn">Enquire</a>
+</div>
 
-    <!-- BIKE GALLERY -->
-    <section>
-        <h2>Our Bike Collection</h2>
+<div class="card tvs">
+<img src="BIKE3.jpg">
+<p>TVS Apache</p>
+<a href="#" onclick="enquire('TVS Apache')" class="btn">Enquire</a>
+</div>
 
-        <div class="gallery">
+<div class="card hero">
+<img src="BIKE4.jpg">
+<p>Hero HF Deluxe</p>
+<a href="#" onclick="enquire('Hero HF Deluxe')" class="btn">Enquire</a>
+</div>
 
-            <div class="card">
-                <img src="BIKE1.jpg">
-                <p>Bike 1</p>
-                <a href="https://wa.me/918588883074?text=Interested%20in%20Bike1" class="whatsapp-btn">Enquire</a>
-            </div>
+</div>
+</section>
 
-            <div class="card">
-                <img src="BIKE2.jpg">
-                <p>Bike 2</p>
-                <a href="https://wa.me/918588883074?text=Interested%20in%20Bike2" class="whatsapp-btn">Enquire</a>
-            </div>
+<!-- EMI CALCULATOR -->
+<section>
+<h2>EMI Calculator</h2>
 
-            <div class="card">
-                <img src="BIKE3.jpg">
-                <p>Bike 3</p>
-                <a href="https://wa.me/918588883074?text=Interested%20in%20Bike3" class="whatsapp-btn">Enquire</a>
-            </div>
+<input type="range" id="amount" min="10000" max="200000" value="50000">
+<p>Amount: ₹<span id="amountValue">50000</span></p>
 
-            <div class="card">
-                <img src="BIKE4.jpg">
-                <p>Bike 4</p>
-                <a href="https://wa.me/918588883074?text=Interested%20in%20Bike4" class="whatsapp-btn">Enquire</a>
-            </div>
+<input type="range" id="rate" min="5" max="20" value="10">
+<p>Interest: <span id="rateValue">10</span>%</p>
 
-        </div>
-    </section>
+<input type="range" id="months" min="6" max="60" value="12">
+<p>Months: <span id="monthValue">12</span></p>
 
-    <!-- WHATSAPP FLOAT -->
-    <a href="https://wa.me/918588883074" class="btn whatsapp">WhatsApp</a>
+<h3 id="emiResult"></h3>
+</section>
 
-    <!-- TYPING SCRIPT -->
-    <script>
-        const text = "Bike & Scooty Finance Expert | Fast Approval | Easy EMI";
-        let i = 0;
+<!-- WHY INSURANCE -->
+<section>
+<h2 class="big-title">Why Insurance is Important?</h2>
+<p>
+Insurance protects you from unexpected loss or accidents.
+It saves your money and gives security for your future.
+Every vehicle owner must have insurance for safety and peace of mind.
+</p>
+</section>
 
-        function typing() {
-            if (i < text.length) {
-                document.getElementById("typing").innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typing, 40);
-            }
-        }
+<!-- FOOTER -->
+<footer>
+<h2>Muthooot Finance</h2>
+<p>Trusted Finance Partner</p>
+</footer>
 
-        typing();
-    </script>
-    <img src="bikecursor.jpg" class="bikecursor" id="cursor">
+<!-- CURSOR -->
+<img src="bikecursor.jpg" id="cursor" class="bike-cursor">
+
+<script>
+
+/* ===== CURSOR FOLLOW ===== */
+const cursor = document.getElementById("cursor");
+
+document.addEventListener("mousemove",(e)=>{
+    cursor.style.left=e.clientX+"px";
+    cursor.style.top=e.clientY+"px";
+});
+
+/* ===== CLICK BIKE EFFECT ===== */
+document.addEventListener("click",(e)=>{
+
+    for(let i=0;i<6;i++){
+
+        let bike=document.createElement("img");
+        bike.src="bikecursor.jpg";
+        bike.className="mini-bike";
+
+        bike.style.left=e.clientX+"px";
+        bike.style.top=e.clientY+"px";
+
+        document.body.appendChild(bike);
+
+        let x=Math.random()*window.innerWidth;
+        let y=Math.random()*window.innerHeight;
+
+        setTimeout(()=>{
+            bike.style.transform=`translate(${x-e.clientX}px,${y-e.clientY}px)`;
+            bike.style.opacity="0";
+        },50);
+
+        setTimeout(()=>bike.remove(),1000);
+    }
+});
+
+/* ===== EMI ===== */
+function calcEMI(){
+    let P=document.getElementById("amount").value;
+    let R=document.getElementById("rate").value/1200;
+    let N=document.getElementById("months").value;
+
+    let emi=P*R*Math.pow(1+R,N)/(Math.pow(1+R,N)-1);
+
+    document.getElementById("emiResult").innerHTML="EMI: ₹"+Math.round(emi);
+}
+
+</script>
 
 </body>
 </html>
