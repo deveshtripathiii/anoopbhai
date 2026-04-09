@@ -80,3 +80,33 @@ images.forEach(img => {
 window.onload = () => {
     typeEffect();
 };
+// ==========================
+// CUSTOM BIKE CURSOR
+// ==========================
+
+const cursor = document.getElementById("cursor");
+
+document.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+});
+
+// ==========================
+// CLICK TRAIL EFFECT
+// ==========================
+
+document.addEventListener("click", (e) => {
+
+    const bike = document.createElement("img");
+    bike.src = "bike-cursor.png";
+    bike.classList.add("trail-bike");
+
+    bike.style.left = e.clientX + "px";
+    bike.style.top = e.clientY + "px";
+
+    document.body.appendChild(bike);
+
+    setTimeout(() => {
+        bike.remove();
+    }, 1000);
+});
