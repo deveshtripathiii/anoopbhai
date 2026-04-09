@@ -1,250 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anoop Shukla Finance</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anoop Shukla Finance | Muthoot Finance</title>
+    <style>
+        /* 8. AESTHETIC BACKGROUND (Slow color change) */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(45deg, #0f172a, #1e3a8a, #020617, #1e293b);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: white;
+            cursor: none; /* 2. Hiding default cursor */
+            overflow-x: hidden;
+        }
 
-<style>
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-/* ===== BODY + BACKGROUND ===== */
-body {
-    margin: 0;
-    font-family: Arial;
-    background: linear-gradient(-45deg,#0f172a,#1e293b,#020617,#1e3a8a);
-    background-size: 400% 400%;
-    animation: bg 10s infinite;
-    color: white;
-    cursor: none;
-}
+        /* 2. CUSTOM BIKE CURSOR */
+        #main-cursor {
+            position: fixed;
+            width: 50px;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+        }
 
-@keyframes bg {
-    0%{background-position:0%}
-    50%{background-position:100%}
-    100%{background-position:0%}
-}
+        /* 3. CLICK EFFECT BIKES */
+        .mini-bike {
+            position: fixed;
+            width: 30px;
+            pointer-events: none;
+            z-index: 9998;
+            transition: transform 1.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.5s;
+        }
 
-/* ===== HERO ===== */
-.hero {
-    text-align: center;
-    padding: 40px;
-}
+        /* 1. WHATSAPP BUTTON */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background: #25d366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            z-index: 999;
+            text-decoration: none;
+        }
 
-.profile-img {
-    width:120px;
-    border-radius:50%;
-}
+        /* 7. BHIYA KI PHOTO (Zoom on hover) */
+        .hero { text-align: center; padding: 60px 20px; }
+        .profile-container { display: inline-block; }
+        .profile-img {
+            width: 200px; /* Badi photo */
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #38bdf8;
+            transition: transform 0.5s ease;
+            object-fit: cover;
+        }
+        .profile-img:hover {
+            transform: scale(1.2); /* Photo badi ho jayegi */
+        }
 
-/* ===== SECTION ===== */
-section {
-    margin:20px;
-    padding:20px;
-    background:#1e293b;
-    border-radius:10px;
-}
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
 
-/* ===== GALLERY ===== */
-.gallery {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-    gap:15px;
-}
+        /* 4. MOTIVATION LIST */
+        .motivation-item {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .motivation-item::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+            font-weight: bold;
+        }
 
-.card {
-    background:#020617;
-    padding:10px;
-    border-radius:10px;
-}
+        /* 5. FAKE RATINGS */
+        .review-card {
+            background: rgba(15, 23, 42, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .stars { color: #facc15; }
 
-.card img {
-    width:100%;
-}
+        /* 9. NEWS TICKER (Bottom Line) */
+        .ticker-wrapper {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #e11d48;
+            color: white;
+            padding: 10px 0;
+            z-index: 1000;
+            font-weight: bold;
+            overflow: hidden;
+        }
+        .ticker-text {
+            display: inline-block;
+            white-space: nowrap;
+            animation: ticker 20s linear infinite;
+        }
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
 
-/* ===== BUTTON ===== */
-.btn {
-    background:green;
-    padding:8px;
-    border-radius:20px;
-    text-decoration:none;
-    color:white;
-    display:inline-block;
-    margin-top:10px;
-}
+        /* 6. MUTHOOT LOGO */
+        .muthoot-footer {
+            text-align: center;
+            padding: 50px 20px 100px;
+        }
+        .muthoot-logo {
+            width: 300px; /* Bada logo */
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
+        }
 
-/* ===== EMI ===== */
-input {
-    padding:8px;
-    margin:5px;
-}
-
-/* ===== CURSOR ===== */
-.bike-cursor {
-    position:fixed;
-    width:40px;
-    pointer-events:none;
-    transform:translate(-50%,-50%);
-    z-index:9999;
-}
-
-/* MINI BIKES */
-.mini-bike {
-    position:fixed;
-    width:25px;
-    pointer-events:none;
-    transition:1s linear;
-}
-
-/* ===== FOOTER ===== */
-footer {
-    text-align:center;
-    padding:20px;
-    background:black;
-    margin-top:20px;
-}
-
-.big-title {
-    font-size:22px;
-    color:#38bdf8;
-}
-
-</style>
+        h2 { color: #38bdf8; border-bottom: 2px solid #38bdf8; padding-bottom: 10px; }
+        .contact-info { font-size: 1.2rem; margin: 10px 0; }
+    </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<div class="hero">
-    <img src="anoop.png" class="profile-img">
-    <h1>Anoop Shukla</h1>
-    <p>📞 8588883074</p>
-    <p>📧 shuklaji8498@gmail.com</p>
-    <p>📍 Sultanpur, Uttar Pradesh</p>
-</div>
+    <img src="bikecursor.jpg" id="main-cursor" alt="cursor">
 
-<!-- GALLERY -->
-<section>
-<h2>Bike Collection</h2>
+    <a href="https://wa.me/918588883074?text=Hello Anoop Bhai, mujhe finance ke baare mein jaanna hai." class="whatsapp-btn" target="_blank">
+        <svg width="35" height="35" fill="white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.319 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.438-9.89 9.886-.002 2.153.559 4.21 1.61 6.026l-1.01 3.688 3.772-.989z"/></svg>
+    </a>
 
-<!-- FILTER BUTTONS -->
-<div style="margin-bottom:15px;">
-<button onclick="filterBike('all')">All</button>
-<button onclick="filterBike('hero')">Hero</button>
-<button onclick="filterBike('honda')">Honda</button>
-<button onclick="filterBike('tvs')">TVS</button>
-</div>
+    <div class="hero">
+        <div class="profile-container">
+            <img src="anoop.png" class="profile-img" alt="Anoop Shukla">
+        </div>
+        <h1>Anoop Shukla</h1>
+        <p class="contact-info">📞 +91 8588883074</p>
+        <p>Finance Expert | Sultanpur, UP</p>
+    </div>
 
-<div class="gallery">
+    <section>
+        <h2>Insurance Kyun Zaroori Hai?</h2>
+        <div class="motivation-item">Accident ke waqt aapke parivaar ki arthik suraksha karta hai.</div>
+        <div class="motivation-item">Hospital ke bhari-bharkam kharchon se azadi milti hai.</div>
+        <div class="motivation-item">Chori hone par gaadi ki poori keemat wapas mil sakti hai.</div>
+        <div class="motivation-item">Third-party nuksaan ki bharpai company karti hai, aap nahi.</div>
+        <div class="motivation-item">Chinta-mukt driving ka anubhav sirf insurance se milta hai.</div>
+        <div class="motivation-item">Insurance karana kanoonan bhi anivarya hai.</div>
+        <div class="motivation-item">Aaj ka chota nivesh, kal ki badi museebat ka hal hai.</div>
+    </section>
 
-<div class="card hero">
-<img src="BIKE1.jpg">
-<p>Hero Splendor</p>
-<a href="#" onclick="enquire('Hero Splendor')" class="btn">Enquire</a>
-</div>
+    <section>
+        <h2>Customer Reviews (5 ★)</h2>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p><strong>Rahul Verma:</strong> Anoop bhai ne bahut jaldi loan pass karwa diya. Best service in Sultanpur!</p>
+        </div>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p><strong>Amit Singh:</strong> Sabse kam interest rate par bike dilwayi. Dhanyawad Muthoot Finance.</p>
+        </div>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p><strong>Suresh Prajapati:</strong> Insurance claim mein bhi poori madad ki. Trustworthy person!</p>
+        </div>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p><strong>Vikas Yadav:</strong> Process bahut smooth tha. Documentation mein koi dikkat nahi aayi.</p>
+        </div>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p><strong>Priya Sharma:</strong> Excellent support and genuine advice. Strongly recommend!</p>
+        </div>
+    </section>
 
-<div class="card honda">
-<img src="BIKE2.jpg">
-<p>Honda Shine</p>
-<a href="#" onclick="enquire('Honda Shine')" class="btn">Enquire</a>
-</div>
+    <div class="muthoot-footer">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Muthoot_Finance_Logo.svg/1200px-Muthoot_Finance_Logo.svg.png" class="muthoot-logo" alt="Muthoot Finance">
+        <p>Trusted Finance Partner for Millions</p>
+    </div>
 
-<div class="card tvs">
-<img src="BIKE3.jpg">
-<p>TVS Apache</p>
-<a href="#" onclick="enquire('TVS Apache')" class="btn">Enquire</a>
-</div>
+    <div class="ticker-wrapper">
+        <div class="ticker-text">
+            Special Offer: Sabse sasta bike loan sirf Anoop Shukla ke paas! Contact: 8588883074 | Location: Sultanpur, Uttar Pradesh | Trusted by Muthoot Finance | Anoop Shukla - 8588883074 | Get Insurance Today!
+        </div>
+    </div>
 
-<div class="card hero">
-<img src="BIKE4.jpg">
-<p>Hero HF Deluxe</p>
-<a href="#" onclick="enquire('Hero HF Deluxe')" class="btn">Enquire</a>
-</div>
+    <script>
+        const cursor = document.getElementById('main-cursor');
 
-</div>
-</section>
+        // 2. Main Cursor Follow
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
 
-<!-- EMI CALCULATOR -->
-<section>
-<h2>EMI Calculator</h2>
+        // 3. Click Effect (Bikes going to corners)
+        document.addEventListener('click', (e) => {
+            const bikeCount = 8;
+            for (let i = 0; i < bikeCount; i++) {
+                const miniBike = document.createElement('img');
+                miniBike.src = 'bikecursor.jpg';
+                miniBike.className = 'mini-bike';
+                miniBike.style.left = e.clientX + 'px';
+                miniBike.style.top = e.clientY + 'px';
+                document.body.appendChild(miniBike);
 
-<input type="range" id="amount" min="10000" max="200000" value="50000">
-<p>Amount: ₹<span id="amountValue">50000</span></p>
+                // Target Random Corners or Directions
+                const targetX = (Math.random() - 0.5) * window.innerWidth * 2;
+                const targetY = (Math.random() - 0.5) * window.innerHeight * 2;
+                const rotation = Math.random() * 360;
 
-<input type="range" id="rate" min="5" max="20" value="10">
-<p>Interest: <span id="rateValue">10</span>%</p>
+                setTimeout(() => {
+                    miniBike.style.transform = `translate(${targetX}px, ${targetY}px) rotate(${rotation}deg)`;
+                    miniBike.style.opacity = '0';
+                }, 50);
 
-<input type="range" id="months" min="6" max="60" value="12">
-<p>Months: <span id="monthValue">12</span></p>
-
-<h3 id="emiResult"></h3>
-</section>
-
-<!-- WHY INSURANCE -->
-<section>
-<h2 class="big-title">Why Insurance is Important?</h2>
-<p>
-Insurance protects you from unexpected loss or accidents.
-It saves your money and gives security for your future.
-Every vehicle owner must have insurance for safety and peace of mind.
-</p>
-</section>
-
-<!-- FOOTER -->
-<footer>
-<h2>Muthooot Finance</h2>
-<p>Trusted Finance Partner</p>
-</footer>
-
-<!-- CURSOR -->
-<img src="bikecursor.jpg.jpg" id="cursor" class="bike-cursor">
-
-<script>
-
-/* ===== CURSOR FOLLOW ===== */
-const cursor = document.getElementById("cursor");
-
-document.addEventListener("mousemove",(e)=>{
-    cursor.style.left=e.clientX+"px";
-    cursor.style.top=e.clientY+"px";
-});
-
-/* ===== CLICK BIKE EFFECT ===== */
-document.addEventListener("click",(e)=>{
-
-    for(let i=0;i<6;i++){
-
-        let bike=document.createElement("img");
-        bike.src="bikecursor.jpg";
-        bike.className="mini-bike";
-
-        bike.style.left=e.clientX+"px";
-        bike.style.top=e.clientY+"px";
-
-        document.body.appendChild(bike);
-
-        let x=Math.random()*window.innerWidth;
-        let y=Math.random()*window.innerHeight;
-
-        setTimeout(()=>{
-            bike.style.transform=`translate(${x-e.clientX}px,${y-e.clientY}px)`;
-            bike.style.opacity="0";
-        },50);
-
-        setTimeout(()=>bike.remove(),1000);
-    }
-});
-
-/* ===== EMI ===== */
-function calcEMI(){
-    let P=document.getElementById("amount").value;
-    let R=document.getElementById("rate").value/1200;
-    let N=document.getElementById("months").value;
-
-    let emi=P*R*Math.pow(1+R,N)/(Math.pow(1+R,N)-1);
-
-    document.getElementById("emiResult").innerHTML="EMI: ₹"+Math.round(emi);
-}
-
-</script>
-
+                setTimeout(() => {
+                    miniBike.remove();
+                }, 1500);
+            }
+        });
+    </script>
 </body>
 </html>
