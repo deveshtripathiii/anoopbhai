@@ -151,3 +151,50 @@ document.addEventListener("click", (e) => {
         }, 1000);
     }
 });
+// FILTER SYSTEM
+function filterBike(type){
+    let cards=document.querySelectorAll(".card");
+
+    cards.forEach(card=>{
+        if(type==="all"){
+            card.style.display="block";
+        }else{
+            if(card.classList.contains(type)){
+                card.style.display="block";
+            }else{
+                card.style.display="none";
+            }
+        }
+    });
+}
+
+// WHATSAPP ENQUIRE
+function enquire(name){
+    let msg=`Hello Sir, I am interested in ${name}`;
+    window.open(`https://wa.me/918588883074?text=${encodeURIComponent(msg)}`);
+}
+
+// EMI SLIDER
+let amount=document.getElementById("amount");
+let rate=document.getElementById("rate");
+let months=document.getElementById("months");
+
+function updateEMI(){
+    document.getElementById("amountValue").innerText=amount.value;
+    document.getElementById("rateValue").innerText=rate.value;
+    document.getElementById("monthValue").innerText=months.value;
+
+    let P=amount.value;
+    let R=rate.value/1200;
+    let N=months.value;
+
+    let emi=P*R*Math.pow(1+R,N)/(Math.pow(1+R,N)-1);
+
+    document.getElementById("emiResult").innerText="EMI: ₹"+Math.round(emi);
+}
+
+amount.oninput=updateEMI;
+rate.oninput=updateEMI;
+months.oninput=updateEMI;
+
+updateEMI();
