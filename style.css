@@ -1,8 +1,13 @@
-/* ===== 1. GLOBAL & AESTHETIC BACKGROUND ===== */
+/* ==========================================
+   🚀 ANOOP SHUKLA FINANCE - MASTER STYLES
+   ========================================== */
+
+/* 1. GLOBAL SETTINGS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: none !important; /* Default cursor ko hide kiya */
 }
 
 body {
@@ -11,8 +16,9 @@ body {
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     color: white;
-    cursor: none; /* Mouse cursor hide kar diya */
     overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding-bottom: 100px;
 }
 
 @keyframes gradientBG {
@@ -21,139 +27,149 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* ===== 2. CUSTOM BIKE CURSORS ===== */
+/* 2. CUSTOM BIKE CURSOR & EXPLOSION */
 #main-cursor {
     position: fixed;
     width: 50px;
     pointer-events: none;
     z-index: 10000;
     transform: translate(-50%, -50%);
+    filter: drop-shadow(0 0 8px #38bdf8);
 }
 
 .mini-bike {
     position: fixed;
-    width: 30px;
+    width: 35px;
     pointer-events: none;
     z-index: 9999;
     transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.2s;
 }
 
-/* ===== 3. WHATSAPP BUTTON ===== */
+/* 3. WHATSAPP FLOATING BUTTON */
 .whatsapp-btn {
     position: fixed;
     bottom: 80px;
     right: 25px;
     background: #25d366;
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.6);
     z-index: 999;
     transition: transform 0.3s ease;
+    text-decoration: none;
 }
 
 .whatsapp-btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(10deg);
 }
 
-/* ===== 4. HERO SECTION & BHIYA KI PHOTO ===== */
+/* 4. HERO SECTION & BHIYA KI PHOTO */
 .hero {
     text-align: center;
-    padding: 80px 20px;
+    padding: 100px 20px 60px;
 }
 
 .profile-img {
-    width: 220px; /* Badi photo */
-    height: 220px;
+    width: 240px;
+    height: 240px;
     border-radius: 50%;
-    border: 6px solid #38bdf8;
+    border: 6px solid #e11d48; /* Muthoot Red Border */
     object-fit: cover;
     transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
+    box-shadow: 0 0 35px rgba(225, 29, 72, 0.5);
 }
 
 .profile-img:hover {
     transform: scale(1.25); /* Cursor jate hi badi hogi */
 }
 
-/* ===== 5. SECTIONS (General) ===== */
+/* 5. REUSABLE SECTIONS */
 section {
     max-width: 1000px;
     margin: 40px auto;
-    padding: 30px;
-    background: rgba(30, 41, 59, 0.6);
-    border-radius: 25px;
-    backdrop-filter: blur(12px);
+    padding: 35px;
+    background: rgba(30, 41, 59, 0.7);
+    border-radius: 30px;
+    backdrop-filter: blur(15px);
     border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    /* Scroll Animation Initial State */
+    opacity: 0;
+    transform: translateY(40px);
 }
 
 h2 {
     color: #38bdf8;
     text-align: center;
     margin-bottom: 25px;
-    font-size: 28px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-weight: 700;
 }
 
-/* ===== 6. PHOTO GRID ===== */
+/* 6. DYNAMIC BIKE GRID */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
 }
 
 .grid-item {
-    height: 180px;
-    border-radius: 15px;
+    background: rgba(15, 23, 42, 0.8);
+    border-radius: 20px;
     overflow: hidden;
-    border: 2px solid rgba(56, 189, 248, 0.2);
+    border: 2px solid rgba(56, 189, 248, 0.1);
+    transition: 0.4s ease;
+}
+
+.grid-item:hover {
+    border-color: #38bdf8;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
 }
 
 .grid-item img {
     width: 100%;
-    height: 100%;
+    height: 180px;
     object-fit: cover;
-    transition: 0.5s ease;
+    border-bottom: 2px solid rgba(56, 189, 248, 0.1);
 }
 
-.grid-item:hover img {
-    transform: scale(1.15);
+/* 7. EMI CALCULATOR STYLES */
+.emi-group {
+    margin-bottom: 25px;
 }
 
-/* ===== 7. MOTIVATION & REVIEWS ===== */
-.motivation-text {
-    font-size: 18px;
-    line-height: 1.8;
-    margin-bottom: 15px;
+.emi-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #38bdf8;
+    font-weight: 600;
 }
 
-.review-card {
-    background: rgba(15, 23, 42, 0.8);
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 15px;
-    border-left: 5px solid #38bdf8;
+input[type="range"] {
+    width: 100%;
+    height: 6px;
+    background: #334155;
+    border-radius: 5px;
+    outline: none;
+    accent-color: #e11d48; /* Muthoot Red */
 }
 
-.stars { color: #facc15; margin-bottom: 5px; }
-
-/* ===== 8. MUTHOOT LOGO ===== */
-.muthoot-footer {
+.emi-result-box {
+    font-size: 40px;
+    color: #22c55e;
     text-align: center;
-    padding: 60px 20px 120px;
+    font-weight: 800;
+    text-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
+    margin: 20px 0;
 }
 
-.muthoot-logo {
-    width: 350px; /* Bada logo */
-    filter: drop-shadow(0 0 15px rgba(255,255,255,0.3));
-    transition: 0.4s;
-}
-
-/* ===== 9. NEWS TICKER (Bottom Line) ===== */
+/* 8. NEWS TICKER (Bottom Strip) */
 .ticker-wrapper {
     position: fixed;
     bottom: 0;
@@ -163,7 +179,7 @@ h2 {
     color: white;
     padding: 12px 0;
     z-index: 1001;
-    font-weight: 600;
+    font-weight: 700;
     overflow: hidden;
     border-top: 2px solid rgba(255,255,255,0.2);
 }
@@ -173,6 +189,7 @@ h2 {
     white-space: nowrap;
     animation: tickerMove 25s linear infinite;
     font-size: 18px;
+    letter-spacing: 1px;
 }
 
 @keyframes tickerMove {
@@ -180,8 +197,26 @@ h2 {
     100% { transform: translateX(-100%); }
 }
 
-/* Mobile Compatibility */
+/* 9. FILTER BUTTONS */
+.filter-btns button {
+    background: transparent;
+    border: 1.5px solid #38bdf8;
+    color: #38bdf8;
+    padding: 10px 25px;
+    border-radius: 25px;
+    margin: 5px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.filter-btns button:hover {
+    background: #38bdf8;
+    color: #0f172a;
+}
+
+/* MOBILE COMPATIBILITY */
 @media (max-width: 600px) {
-    .muthoot-logo { width: 250px; }
-    .profile-img { width: 160px; height: 160px; }
+    .profile-img { width: 180px; height: 180px; }
+    h1 { font-size: 32px !important; }
+    .ticker-text { font-size: 15px; }
 }
