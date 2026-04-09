@@ -24,26 +24,11 @@
             height: 130px;
             border-radius: 50%;
             border: 3px solid white;
-            object-fit: cover;
-            transition: transform 0.4s ease;
+            transition: 0.4s;
         }
 
         .profile-img:hover {
             transform: scale(1.2);
-        }
-
-        #typing {
-            font-size: 16px;
-            font-weight: bold;
-            margin-top: 10px;
-            display: block;
-            min-height: 40px;
-        }
-
-        .contact-info a {
-            color: #38bdf8;
-            text-decoration: none;
-            font-weight: bold;
         }
 
         section {
@@ -78,31 +63,12 @@
 
         .whatsapp-btn {
             background: green;
-            display: inline-block;
-            margin-top: 10px;
+            color: white;
             padding: 8px 12px;
             border-radius: 20px;
             text-decoration: none;
-            color: white;
-        }
-
-        /* REVIEWS */
-        .reviews {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .review-card {
-            background: #0f172a;
-            padding: 20px;
-            width: 280px;
-            border-radius: 10px;
-        }
-
-        .review-card h4 {
-            color: #38bdf8;
+            display: inline-block;
+            margin-top: 10px;
         }
 
         .btn {
@@ -137,14 +103,11 @@
         <img src="anoop.png" class="profile-img">
 
         <h1>Anoop Shukla</h1>
-
         <span id="typing"></span>
 
-        <div class="contact-info">
-            <p>📞 <a href="tel:8588883074">8588883074</a></p>
-            <p>📧 <a href="mailto:shuklaji8498@gmail.com">shuklaji8498@gmail.com</a></p>
-            <p>📍 Sultanpur, Uttar Pradesh</p>
-        </div>
+        <p>📞 8588883074</p>
+        <p>📧 shuklaji8498@gmail.com</p>
+        <p>📍 Sultanpur, Uttar Pradesh</p>
 
         <a href="https://www.instagram.com/anoop_shukla_08/" target="_blank" class="btn instagram">
             Follow on Instagram
@@ -154,7 +117,7 @@
     <!-- ABOUT -->
     <section>
         <h2>About Me</h2>
-        <p>मैं ग्राहकों को आसान तरीके से बाइक और स्कूटी फाइनेंस दिलाता हूँ।</p>
+        <p>मैं ग्राहकों को आसानी से बाइक और स्कूटी फाइनेंस दिलाता हूँ।</p>
         <p>I help people get bike and scooty finance easily.</p>
     </section>
 
@@ -164,83 +127,56 @@
         <p>✔ Bike Finance | ✔ Scooty Finance | ✔ Insurance</p>
     </section>
 
-    <!-- 🔥 BIKE GALLERY (NEW ADDED) -->
+    <!-- BIKE GALLERY -->
     <section>
         <h2>Our Bike Collection</h2>
 
         <div class="gallery">
 
             <div class="card">
-                <img src="BIKE1.JPG">
+                <img src="BIKE1.jpg">
                 <p>Bike 1</p>
-                <a href="https://wa.me/918588883074?text=Interested%20in%20Bike%201" class="whatsapp-btn">Enquire</a>
+                <a href="https://wa.me/918588883074?text=Interested%20in%20Bike1" class="whatsapp-btn">Enquire</a>
             </div>
 
             <div class="card">
-                <img src="BIKE2.JPG">
-                <p>BIKE 2</p>
-                <a href="https://wa.me/918588883074?text=Interested%20in%20Bike%202" class="whatsapp-btn">Enquire</a>
+                <img src="BIKE2.jpg">
+                <p>Bike 2</p>
+                <a href="https://wa.me/918588883074?text=Interested%20in%20Bike2" class="whatsapp-btn">Enquire</a>
             </div>
 
             <div class="card">
-                <img src="BIKE3.JPG">
-                <p>BIKE 3</p>
-                <a href="https://wa.me/918588883074?text=Interested%20in%20Bike%203" class="whatsapp-btn">Enquire</a>
+                <img src="BIKE3.jpg">
+                <p>Bike 3</p>
+                <a href="https://wa.me/918588883074?text=Interested%20in%20Bike3" class="whatsapp-btn">Enquire</a>
             </div>
 
             <div class="card">
-                <img src="BIKE4.JPG">
-                <p>BIKE 4</p>
-                <a href="https://wa.me/918588883074?text=Interested%20in%20Bike%204" class="whatsapp-btn">Enquire</a>
+                <img src="BIKE4.jpg">
+                <p>Bike 4</p>
+                <a href="https://wa.me/918588883074?text=Interested%20in%20Bike4" class="whatsapp-btn">Enquire</a>
             </div>
 
         </div>
     </section>
 
-    <!-- REVIEWS -->
-    <section>
-        <h2>Client Reviews</h2>
-        <div class="reviews">
-            <div class="review-card">
-                <p>⭐⭐⭐⭐⭐ Excellent service</p>
-                <h4>— Rahul</h4>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section>
-        <h2>Contact</h2>
-        <p>📞 8588883074</p>
-        <p>📧 shuklaji8498@gmail.com</p>
-    </section>
-
-    <!-- WHATSAPP -->
+    <!-- WHATSAPP FLOAT -->
     <a href="https://wa.me/918588883074" class="btn whatsapp">WhatsApp</a>
 
     <!-- TYPING SCRIPT -->
     <script>
-        const texts = [
-            "Bike & Scooty Finance Expert",
-            "Fast Approval & Easy EMI",
-            "Trusted Insurance Services"
-        ];
+        const text = "Bike & Scooty Finance Expert | Fast Approval | Easy EMI";
+        let i = 0;
 
-        let count = 0, index = 0;
-
-        function type() {
-            let current = texts[count];
-            document.getElementById("typing").innerHTML = current.slice(0, index++);
-
-            if (index > current.length) {
-                index = 0;
-                count = (count + 1) % texts.length;
+        function typing() {
+            if (i < text.length) {
+                document.getElementById("typing").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typing, 40);
             }
-
-            setTimeout(type, 50);
         }
 
-        type();
+        typing();
     </script>
 
 </body>
