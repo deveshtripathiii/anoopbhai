@@ -13,7 +13,6 @@
             color: #e2e8f0;
         }
 
-        /* HERO */
         .hero {
             text-align: center;
             background: linear-gradient(135deg, #1e3a8a, #2563eb);
@@ -47,7 +46,6 @@
             font-weight: bold;
         }
 
-        /* SECTIONS */
         section {
             margin: 20px;
             padding: 25px;
@@ -58,6 +56,34 @@
 
         h2 {
             color: #38bdf8;
+        }
+
+        /* GALLERY */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #020617;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .whatsapp-btn {
+            background: green;
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 12px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
         }
 
         /* REVIEWS */
@@ -73,19 +99,12 @@
             padding: 20px;
             width: 280px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            transition: transform 0.3s;
-        }
-
-        .review-card:hover {
-            transform: translateY(-5px);
         }
 
         .review-card h4 {
             color: #38bdf8;
         }
 
-        /* BUTTONS */
         .btn {
             display: inline-block;
             margin: 10px;
@@ -127,7 +146,6 @@
             <p>📍 Sultanpur, Uttar Pradesh</p>
         </div>
 
-        <!-- Instagram Button -->
         <a href="https://www.instagram.com/anoop_shukla_08/" target="_blank" class="btn instagram">
             Follow on Instagram
         </a>
@@ -136,17 +154,8 @@
     <!-- ABOUT -->
     <section>
         <h2>About Me</h2>
-
-        <p>
-            मैं अपने ग्राहकों को आसान और भरोसेमंद तरीके से बाइक और स्कूटी फाइनेंस 
-            उपलब्ध कराने में मदद करता हूँ। मेरा लक्ष्य है कि हर व्यक्ति अपने सपनों 
-            की बाइक या स्कूटी को बिना किसी परेशानी के प्राप्त कर सके।
-        </p>
-
-        <p>
-            I help people get bike and scooty finance easily with minimal paperwork.
-            I also provide all types of insurance services with the best deals.
-        </p>
+        <p>मैं ग्राहकों को आसान तरीके से बाइक और स्कूटी फाइनेंस दिलाता हूँ।</p>
+        <p>I help people get bike and scooty finance easily.</p>
     </section>
 
     <!-- SERVICES -->
@@ -155,27 +164,47 @@
         <p>✔ Bike Finance | ✔ Scooty Finance | ✔ Insurance</p>
     </section>
 
+    <!-- 🔥 BIKE GALLERY (NEW ADDED) -->
+    <section>
+        <h2>Our Bike Collection</h2>
+
+        <div class="gallery">
+
+            <div class="card">
+                <img src="BIKE1.JPG">
+                <p>Bike 1</p>
+                <a href="https://wa.me/918588883074?text=Interested%20in%20Bike%201" class="whatsapp-btn">Enquire</a>
+            </div>
+
+            <div class="card">
+                <img src="BIKE2.JPG">
+                <p>Bike 2</p>
+                <a href="https://wa.me/918588883074?text=Interested%20in%20Bike%202" class="whatsapp-btn">Enquire</a>
+            </div>
+
+            <div class="card">
+                <img src="BIKE3.JPG">
+                <p>Bike 3</p>
+                <a href="https://wa.me/918588883074?text=Interested%20in%20Bike%203" class="whatsapp-btn">Enquire</a>
+            </div>
+
+            <div class="card">
+                <img src="BIKE4.JPG">
+                <p>Bike 4</p>
+                <a href="https://wa.me/918588883074?text=Interested%20in%20Bike%204" class="whatsapp-btn">Enquire</a>
+            </div>
+
+        </div>
+    </section>
+
     <!-- REVIEWS -->
     <section>
         <h2>Client Reviews</h2>
-
         <div class="reviews">
-
             <div class="review-card">
-                <p>⭐⭐⭐⭐⭐<br>बहुत अच्छी सर्विस और आसान प्रक्रिया।</p>
+                <p>⭐⭐⭐⭐⭐ Excellent service</p>
                 <h4>— Rahul</h4>
             </div>
-
-            <div class="review-card">
-                <p>⭐⭐⭐⭐⭐<br>Quick approval and trusted service.</p>
-                <h4>— Aman</h4>
-            </div>
-
-            <div class="review-card">
-                <p>⭐⭐⭐⭐⭐<br>Insurance best rate par mila.</p>
-                <h4>— Sandeep</h4>
-            </div>
-
         </div>
     </section>
 
@@ -184,44 +213,31 @@
         <h2>Contact</h2>
         <p>📞 8588883074</p>
         <p>📧 shuklaji8498@gmail.com</p>
-        <p>📍 Sultanpur, Uttar Pradesh</p>
     </section>
 
     <!-- WHATSAPP -->
-    <a href="https://wa.me/918588883074?text=Hello%20Sir,%20I%20want%20bike%20finance"
-       target="_blank" class="btn whatsapp">
-        WhatsApp
-    </a>
+    <a href="https://wa.me/918588883074" class="btn whatsapp">WhatsApp</a>
 
-    <!-- TYPING EFFECT -->
+    <!-- TYPING SCRIPT -->
     <script>
         const texts = [
-            "Bike & Scooty Finance Expert with Fast Approval.",
-            "Trusted Insurance Services Provider.",
-            "Minimum Paperwork | Maximum Satisfaction."
+            "Bike & Scooty Finance Expert",
+            "Fast Approval & Easy EMI",
+            "Trusted Insurance Services"
         ];
 
-        let count = 0;
-        let index = 0;
-        let currentText = "";
-        let letter = "";
+        let count = 0, index = 0;
 
         function type() {
-            if (count === texts.length) count = 0;
+            let current = texts[count];
+            document.getElementById("typing").innerHTML = current.slice(0, index++);
 
-            currentText = texts[count];
-            letter = currentText.slice(0, ++index);
-
-            document.getElementById("typing").innerHTML = letter;
-
-            if (letter.length === currentText.length) {
-                setTimeout(() => {
-                    index = 0;
-                    count++;
-                }, 1500);
+            if (index > current.length) {
+                index = 0;
+                count = (count + 1) % texts.length;
             }
 
-            setTimeout(type, 40);
+            setTimeout(type, 50);
         }
 
         type();
