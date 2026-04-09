@@ -231,3 +231,32 @@ h2 {
         font-size: 22px;
     }
 }
+/* CUSTOM CURSOR */
+body {
+    cursor: none;
+}
+
+/* BIKE CURSOR */
+.bike-cursor {
+    position: fixed;
+    width: 40px;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+/* TRAIL BIKE */
+.trail-bike {
+    position: fixed;
+    width: 30px;
+    pointer-events: none;
+    opacity: 0.8;
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+}
