@@ -260,3 +260,39 @@ body {
         transform: translateY(-30px);
     }
 }
+/* HIDE DEFAULT CURSOR */
+body {
+    cursor: none;
+}
+
+/* CUSTOM CURSOR */
+.bike-cursor {
+    position: fixed;
+    width: 45px;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+/* AESTHETIC BACKGROUND */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(-45deg, #0f172a, #1e293b, #020617, #1e3a8a);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    color: #e2e8f0;
+}
+
+/* Gradient Animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.mini-bike {
+    position: fixed;
+    width: 25px;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 1s linear, opacity 1s;
+}
